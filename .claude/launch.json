@@ -1,0 +1,1 @@
+{"version":"0.0.1","configurations":[{"name":"site","runtimeExecutable":"python","runtimeArgs":["-m","http.server","5600","--directory","fabulux-makeup-beauty-html-bootstrap-template-2026-05-16-06-37-10-utc/Fabulux_Main_File/HTML_TEMPLATE"],"port":5600}]}

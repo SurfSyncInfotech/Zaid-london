@@ -1,0 +1,2684 @@
+/*==============================================================================
+[Master Stylesheet]
+
+Project:        Fabulux - Makeup & Beauty
+Version:        2.0
+Last change:    January 29, 2026
+Primary use:    Main Website Stylesheet
+Description:    Fabulux is a modern and elegant HTML5 Bootstrap template designed for Makeup Artists, Beauty Salons, Spas, and other beauty-related businesses. 
+                This creative template is perfect for showcasing your beauty services, makeup portfolios, beauty blogs, skincare products, cosmetic stores, and more.Whether you're running a beauty salon, freelance makeup business, or beauty academy, Fabulux provides a clean, stylish layout with a professional design and smooth user experience, helping you present your services and products in the most appealing way possible.
+==============================================================================*/
+
+/*==============================================================================
+[Table of Contents]
+
+1. Import Vendor Files
+2. CSS Variables & Global Configuration
+    2.1. Color Palette
+    2.2. Typography System
+    2.3. Animation Timing
+3. Keyframes Animation
+4. Base & Reset Styles
+    4.1. Universal Reset
+    4.2. Body
+    4.3. Typography (h1-h6, p, a, button)
+5. Layout Components
+    5.1. Section Styles / .section
+    5.2. Hero Container / .hero-container
+6. Interactive Elements
+    6.1. Button Styles / .btn, .btn-primary
+    6.2. Form Elements / .form, input, textarea, select
+        6.2.1. Form Inputs
+        6.2.2. Dropdown Components
+        6.2.3. Multi-select Dropdown
+        6.2.4. Alerts & Validation
+7. Content Components
+    7.1. Card Styles / .card
+        7.1.1. About Cards
+        7.1.2. Service Cards
+        7.1.3. Blog Cards
+        7.1.4. Contact Cards
+    7.2. Heading Styles / .sub-heading
+    7.3. Image Containers / .image-container
+8. Color Utility Classes
+    8.1. Background Colors
+    8.2. Text Colors
+9. Banner & Hero Sections
+    9.1. Home Banner / .banner-home
+    9.2. Inner Banner / .banner-inner
+    9.3. Testimonial Banner / .testimonial-banner
+    9.4. Why Choose Us Banner / .whychooseus-banner
+    9.5. Appointment CTA Banner / .banner-appointment-cta
+    9.6. 404 Banner / .banner-notfound
+    9.7. Contact Banner / .banner-contact
+10. Navigation & Header
+    10.1. Main Navigation / .navbar
+    10.2. Navigation Links / .nav-link
+    10.3. Dropdown Menu / .dropdown-menu
+    10.4. Logo / .logo-container
+11. Sidebar Navigation
+    11.1. Sidebar Container / .sidebar
+    11.2. Sidebar Menu / .sidebar-menu
+    11.3. Sidebar Overlay / .sidebar-overlay
+12. Page Sections
+    12.1. Home Banner Content / .banner-home-content
+    12.2. About Section / .about-intro, .about-benefits
+    12.3. Service Section / .service-content-container
+    12.4. Why Choose Us / .whychooseus-content-container
+    12.5. Testimonial Section / .testimonial-content-container
+    12.6. Pricing Section / .pricing-content
+    12.7. Appointment CTA / .appointment-cta-content
+    12.8. Team Section / .team-content-container
+    12.9. Appointment Form / .appointment-header-container
+    12.10. Blog Section / .blog-section-container
+13. Footer
+    13.1. Footer Content / .footer-content-banner
+    13.2. Footer Links / .footer-link
+    13.3. Footer Copyright / .footer-copyright-container
+14. Icon Styles
+    14.1. Footer Icons / .footer-icon
+    14.2. Contact Icons / .contact-home-icon
+15. Interactive Components
+    15.1. Request Loader / .request-loader
+    15.2. Modal & Video / .modal-overlay, .video-modal
+16. List Styles
+    16.1. Check List / .check-list
+17. Accordion Component / .accordion
+18. Animation Utilities
+    18.1. Animate Classes / .animate-box, .animated
+19. Spacing Utilities
+    19.1. Flex Gap Spacing / .gspace-*
+    19.2. Grid Spacing / .grid-spacer-*
+
+==============================================================================*/
+
+/*==============================================================================
+[Color Glossary]
+
+Primary Colors:
+    --primary: #663A30          (Dark Brown - Used for: headings, text, primary buttons)
+    --secondary: #FFF6EF        (Cream - Used for: backgrounds, sections)
+    
+Accent Colors:
+    --accent-color: #FFFFFF     (White - Used for: cards, text on dark backgrounds)
+    --accent-color-2: #E7D3C5   (Light Brown - Used for: borders, hover states)
+    --accent-color-3: #02010100 (Transparent - Used for: overlays)
+    --accent-color-4: #000000   (Black - Used for: text, icons)
+    --accent-color-5: rgba(0,0,0,.45)   (Black overlay - Used for: modal backgrounds)
+    --accent-color-6: #F1F1F1   (Light Gray - Used for: backgrounds)
+    
+Text Colors:
+    --text-color: #7A7A7A       (Gray - Used for: body text, descriptions)
+    
+Overlay Colors:
+    --accent-sidebar-overlay: rgba(0,0,0,.45)   (Used for: sidebar overlay)
+
+Usage Examples:
+    - Hero sections: --primary background with --accent-color text
+    - Content sections: --secondary background with --primary text
+    - Buttons: --primary background with --accent-color text
+    - Cards: --accent-color background with --primary text
+==============================================================================*/
+
+/*==============================================================================
+[Typography Guide]
+
+Font Families:
+    --font-family-heading: "Marcellus", sans-serif
+        Usage: All headings (h1-h6), buttons, navigation
+    
+    --font-family-text: "Catamaran", sans-serif
+        Usage: Body text, paragraphs, descriptions
+    
+    --font-family-highlight: "Playfair Display", sans-serif
+        Usage: Decorative text, special highlights
+
+Heading Sizes (Desktop):
+    h1: 84px / 1em line-height / 600 weight
+    h2: 54px / 1em line-height / 500 weight
+    h3: 28px / 1em line-height / 500 weight
+    h4: 22px / 1em line-height / 500 weight
+    h5: 20px / 1em line-height / 600 weight
+    h6: 16px / 1em line-height / 500 weight (uppercase)
+
+Body Text:
+    p: 16px / 1.4em line-height / 400 weight
+    
+Links & Buttons:
+    a, button, .btn: 16px / 1em line-height / 400 weight (uppercase)
+
+Notes:
+    - All headings use Marcellus font family
+    - Body text uses Catamaran font family
+    - Line heights are optimized for readability
+    - Heading sizes decrease by approximately 0.3-0.4em per level
+==============================================================================*/
+
+/*==============================================================================
+[Animation Timing]
+
+--animation-normal: 1.25s   (Standard transitions, hover effects)
+--animation-slow: 2.25s     (Slow animations, complex transitions)
+--animation-fast: 0.75s     (Quick feedback, button clicks)
+
+Standard transitions use 0.3s - 0.4s for most interactive elements
+==============================================================================*/
+
+
+/* ============================================================================
+   1.0. Import Vendor Files
+============================================================================ */
+
+@import url('../css/fonts.css');
+@import url('../css/vendor/bootstrap.min.css');
+@import url('../css/vendor/fontawesome.css');
+@import url('../css/vendor/solid.css');
+@import url('../css/vendor/brands.css');
+@import url('../css/vendor/regular.css');
+@import url('../css/vendor/swiper-bundle.min.css');
+@import url('../css/vendor/animate.min.css');
+
+
+/* ============================================================================
+   2.0. CSS Variables & Global Configuration
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   2.1. Color Palette
+---------------------------------------------------------------------------- */
+:root {
+    /* Primary Colors */
+    --primary: #663A30;
+    --secondary: #FFF6EF;
+    
+    /* Text Colors */
+    --text-color: #7A7A7A;
+    
+    /* Accent Colors */
+    --accent-color: #FFFFFF;
+    --accent-color-2: #E7D3C5;
+    --accent-color-3: #02010100;
+    --accent-color-4: #000000;
+    --accent-color-5: rgba(0,0,0,.45);
+    --accent-color-6: #F1F1F1;
+    
+    /* Overlay Colors */
+    --accent-sidebar-overlay: rgba(0,0,0,.45);
+
+/* ----------------------------------------------------------------------------
+   2.2. Typography System
+---------------------------------------------------------------------------- */
+    /* Font Families */
+    --font-family-heading: "Marcellus", sans-serif;
+    --font-family-text: "Catamaran", sans-serif;
+    --font-family-highlight: "Playfair Display", sans-serif;
+
+/* ----------------------------------------------------------------------------
+   2.3. Animation Timing
+---------------------------------------------------------------------------- */
+    /* Animation Durations */
+    --animation-normal: 1.25s;
+    --animation-slow: 2.25s;
+    --animation-fast: 0.75s;
+}
+
+
+/* ============================================================================
+   3.0. Keyframes Animation
+============================================================================ */
+
+@property --progress {
+    syntax: '<integer>';
+    inherits: true;
+    initial-value: 0;
+}
+
+@keyframes load {
+    to {
+        --progress: var(var(--value))
+    }
+}
+
+@keyframes ripple {
+    from {
+        border-width: 0px;
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+        transform-origin: center;
+    }
+    to {
+        border-width: 13px;
+        opacity: 0;
+        transform: scale3d(1.7, 1.7, 1.8);
+        transform-origin: center;
+    }
+}
+
+
+/* ============================================================================
+   4.0. Base & Reset Styles
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   4.1. Universal Reset
+---------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* ----------------------------------------------------------------------------
+   4.2. Body
+---------------------------------------------------------------------------- */
+body {
+    color: var(--primary);
+    font-family: var(--font-family-text);
+}
+
+/* ----------------------------------------------------------------------------
+   4.3. Typography (h1-h6, p, a, button)
+---------------------------------------------------------------------------- */
+h1 {
+    font-family: var(--font-family-heading);
+    font-size: 84px;
+    font-weight: 600;
+    line-height: 1em;
+    margin: 0px;
+}
+
+h2 {
+    font-family: var(--font-family-heading);
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 1em;
+    margin: 0px;
+}
+
+h3 {
+    font-family: var(--font-family-heading);
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1em;
+    margin: 0px;
+}
+
+h4 {
+    font-family: var(--font-family-heading);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1em;
+    margin: 0px;
+}
+
+h5 {
+    font-family: var(--font-family-heading);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1em;
+    margin: 0px;
+}
+
+h6 {
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1em;
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+p {
+    color: var(--text-color);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    margin-bottom: 10px;
+}
+
+button,
+a,
+.btn {
+    font-family: var(--font-family-heading);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
+/* ============================================================================
+   5.0. Layout Components
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   5.1. Section Styles
+---------------------------------------------------------------------------- */
+.section { padding: 8em 1em 8em 1em; }
+.section-py-small { padding: 6em 1em 6em 1em; }
+.section-py-medium { padding: 7em 1em 7em 1em; }
+.section-pb-large { padding: 8em 1em 10em 1em; }
+
+/* ----------------------------------------------------------------------------
+   5.2. Hero Container
+---------------------------------------------------------------------------- */
+.hero-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1340px;
+    width: 100%;
+}
+
+
+/* ============================================================================
+   6.0. Interactive Elements
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   6.1. Button Styles
+---------------------------------------------------------------------------- */
+.btn {
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    outline: none;
+    padding: 14px 34px 14px 34px;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+    .btn-primary:hover {
+        background-color: var(--primary);
+        border: 1px solid var(--accent-color);
+        color: var(--accent-color);
+        transform: translateY(-8px);
+    }
+    .btn-primary.btn-nohover:hover {
+        transform: none;
+    }
+
+/* ----------------------------------------------------------------------------
+   6.2. Form Elements
+---------------------------------------------------------------------------- */
+
+/* 6.2.1. Form Container & Common Inputs */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.form input,
+.form textarea {
+    background-color: var(--accent-color-3);
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 0px;
+    box-shadow: none;
+    color: var(--text-color);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+    margin: 0px 0px 0px 0px;
+    outline: none;
+    padding: 15px 15px 10px 0px;
+}
+    .form input::placeholder,
+    .form textarea::placeholder {
+        color: var(--text-color);
+    }
+    .form input:autofill,
+    .form textarea:autofill {
+        background-color: transparent;
+        color: var(--text-color);
+        font-family: var(--font-family-text);
+        transition: background-color 5000s ease-in-out;
+        -webkit-text-fill-color: var(--text-color);
+    }
+
+.form label {
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.form .error-text {
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1em;
+    margin-top: 5px;
+}
+
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0px 0px;
+    margin-bottom: 20px;
+}
+
+/* 6.2.2. Dropdown Components */
+.form .dropdown-container {
+    border: none;
+    position: relative;
+    width: 100%;
+}
+
+.form .dropdown-select {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 0px 0px;
+    color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 20px 20px;
+    justify-content: space-between;
+    line-height: 1.5em;
+    outline: none;
+    padding: 15px 15px 10px 0px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+    .form .dropdown-select i {
+        color: var(--primary);
+    }
+
+.form .dropdown-list {
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 0;
+    color: var(--text-color);
+    display: none;
+    left: 0;
+    margin-top: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 10;
+}
+    .form .dropdown-container.active .dropdown-list {
+        display: block;
+    }
+
+.form .dropdown-option {
+    background-color: var(--accent-color);
+    border: none;
+    border-bottom: 1px solid var(--primary);
+    border-radius: 0px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4em;
+    padding: 10px 10px 10px 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+    .form .dropdown-option:first-child {
+        border-top: 1px solid var(--primary);
+    }
+    .form .dropdown-option:hover {
+        color: var(--primary);
+    }
+    .form .dropdown-option.selected {
+        color: var(--text-color);
+    }
+
+.form .selected-text {
+    color: var(--text-color);
+    transition: color 0.2s ease;
+}
+    .form .selected-text.has-value {
+        color: var(--text-color);
+    }
+
+/* 6.2.3. Multi-select Dropdown */
+.dd-multi__list { display: none; }
+.dd-multi__input {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+.dd-multi.active .dd-multi__list { display: block; }
+.dd-multi__option { cursor: pointer; }
+    .dd-multi__option.active {
+        background-color: var(--accent-color);
+        color: var(--primary);
+    }
+
+.dd-multi__select {
+    align-items: center;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.dd-multi__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.dd-multi__chip {
+    align-items: center;
+    background-color: var(--accent-color-6);
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+    color: var(--text-color);
+    display: inline-flex;
+    font-family: var(--font-family-text);
+    font-size: 14px;
+    font-weight: 400;
+    gap: 6px;
+    line-height: 1;
+    padding: 6px 10px;
+}
+    .dd-multi__chip button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+        line-height: 1;
+        padding: 0;
+    }
+        .dd-multi__chip button:hover {
+            color: var(--primary);
+        }
+    .dd-multi__chips .placeholder {
+        background-color: var(--accent-color-3);
+        color: var(--text-color);
+        opacity: 1;
+    }
+
+/* 6.2.4. Alerts & Validation */
+.alert {
+    align-items: center;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    margin-bottom: 15px;
+    padding: 2em;
+}
+
+.important-marker {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.success {
+    background-color: var(--accent-color);
+    color: var(--accent-color-4);
+}
+
+.error {
+    background-color: var(--accent-color);
+    color: var(--accent-color-4);
+}
+
+.check-icon,
+.cross-icon {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.hidden { display: none; }
+
+
+/* ============================================================================
+   7.0. Content Components
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   7.1. Card Styles
+---------------------------------------------------------------------------- */
+.card {
+    border: none;
+    border-radius: 0px;
+    transition: all 0.4s ease;
+}
+
+/* 7.1.1. About Cards */
+.card-about-intro__highlight {
+    background-color: var(--primary);
+    bottom: 20px;
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    left: 0;
+    padding: 3em 3em 3em 3em;
+    position: absolute;
+    width: 60%;
+}
+
+/* 7.1.2. Service Cards */
+.service-description-card {
+    background-color: var(--accent-color);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+    padding: 2em 2em 2em 2em;
+}
+    .service-description-card:hover {
+        transform: translateY(-8px);
+    }
+    .service-description-card .service-title {
+        text-transform: capitalize;
+    }
+    .service-description-card .service-subtitle {
+        font-family: var(--font-family-text);
+    }
+
+/* 7.1.3. Blog Cards */
+.card-blog {
+    background-color: var(--accent-color-3);
+    border: 1px solid var(--accent-color-2);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 2em 2em 2em 2em;
+}
+    .card-blog:hover {
+        background-color: var(--primary);
+        color: var(--accent-color);
+    }
+
+.card-blog-recent {
+    background-color: var(--primary);
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 3em 3em 3em 3em;
+}
+
+/* 7.1.4. Contact Cards */
+.card-contact {
+    background-color: var(--accent-color);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    height: 100%;
+    padding: 8em 4em 8em 4em;
+    width: 55%;
+}
+    .card-contact .card-contact-title {
+        margin-bottom: 50px;
+    }
+
+/* ----------------------------------------------------------------------------
+   7.2. Heading Styles
+---------------------------------------------------------------------------- */
+.sub-heading-line,
+.sub-heading-double {
+    align-items: center;
+    display: flex;
+    gap: 15px;
+}
+
+.sub-heading-line { width: 50%; }
+.sub-heading-w-15 { width: 15%; }
+.sub-heading-w-20 { width: 20%; }
+.sub-heading-w-25 { width: 25%; }
+.sub-heading-w-30 { width: 30%; }
+.sub-heading-w-35 { width: 35%; }
+.sub-heading-w-50 { width: 50%; }
+
+/* Right line only */
+.sub-heading-line::after {
+    border-bottom: 1px solid var(--primary);
+    content: '';
+    flex-grow: 1;
+}
+
+/* Left line only */
+.sub-heading-line.left-only {
+    flex-direction: row;
+}
+    .sub-heading-line.left-only::before {
+        border-bottom: 1px solid var(--primary);
+        content: '';
+        flex-grow: 1;
+    }
+    .sub-heading-line.left-only::after {
+        content: none;
+    }
+
+/* Accent line variations */
+.accent-line.sub-heading-line::after {
+    border-bottom: 1px solid var(--accent-color);
+    content: '';
+    flex-grow: 1;
+}
+
+.accent-line.sub-heading-line.left-only::before {
+    border-bottom: 1px solid var(--accent-color);
+    content: '';
+    flex-grow: 1;
+}
+
+/* Left & right lines */
+.sub-heading-double::before,
+.sub-heading-double::after {
+    border-bottom: 1px solid var(--primary);
+    content: '';
+    flex-grow: 1;
+}
+
+.home-heading-wrapper {
+    font-family: var(--font-family-highlight);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.sub-heading-text {
+    font-family: var(--font-family-text);
+}
+
+/* ----------------------------------------------------------------------------
+   7.3. Image Containers
+---------------------------------------------------------------------------- */
+.image-container {
+    overflow: hidden;
+    position: relative;
+}
+    .image-container img {
+        border-radius: 0px;
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+/* About Section Images */
+.about-intro__highlight-image {
+    align-self: flex-end;
+    width: 60%;
+}
+
+.about-intro__image {
+    align-self: center;
+    position: relative;
+    width: 90%;
+    z-index: 2;
+}
+
+.about-benefits__highlight-image {
+    align-self: flex-end;
+    width: 60%;
+}
+
+.about-benefits__image {
+    align-self: center;
+    position: relative;
+    width: 90%;
+    z-index: 2;
+}
+
+/* Why Choose Us Images */
+.chooseus-image {
+    align-self: center;
+    position: relative;
+    width: 90%;
+    z-index: 2;
+}
+
+.chooseus-image-paint {
+    align-self: flex-end;
+    text-align: right;
+}
+    .chooseus-image-paint img {
+        width: 65%;
+    }
+
+/* Pricing Images */
+.image-pricing {
+    align-self: center;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+    .image-pricing img {
+        width: 90%;
+    }
+
+/* Blog Images */
+.blog-post-image img {
+    width: 100%;
+}
+
+.recent-post-img img {
+    background-color: var(--secondary);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+    .recent-post-img:hover img {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+
+
+/* ============================================================================
+   8.0. Color Utility Classes
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   8.1. Background Colors
+---------------------------------------------------------------------------- */
+.bg-primary-accent { background-color: var(--primary); }
+.bg-secondary-accent { background-color: var(--secondary); }
+
+/* ----------------------------------------------------------------------------
+   8.2. Text Colors
+---------------------------------------------------------------------------- */
+.accent-color { color: var(--accent-color); }
+
+
+/* ============================================================================
+   9.0. Banner & Hero Sections
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   9.1. Home Banner
+---------------------------------------------------------------------------- */
+.banner-home {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/hero-images245.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+    .banner-home::before {
+        background-color: var(--accent-color-3);
+        background-image: url('https://fabulux1.foxcreation.net/assets/images/background-foundation.png');
+        background-position: center left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        height: 100%;
+        inset: 0;
+        opacity: 0.25;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+/* ----------------------------------------------------------------------------
+   9.2. Inner Banner
+---------------------------------------------------------------------------- */
+.banner-inner {
+    background-color: var(--primary);
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/hero-images245.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5em 1em 5em 1em;
+    position: relative;
+}
+
+/* ----------------------------------------------------------------------------
+   9.3. Testimonial Banner
+---------------------------------------------------------------------------- */
+.testimonial-banner {
+    background-color: var(--primary);
+    color: var(--accent-color);
+    padding: 1em 1em 8em 1em;
+    position: relative;
+    z-index: 1;
+}
+    .testimonial-banner::before {
+        background-image: url('https://fabulux1.foxcreation.net/assets/images/flowerbackgroundtestimonials.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        height: 100%;
+        inset: 0;
+        opacity: 0.5;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+    .testimonial-banner.testimonial-light-banner {
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+
+/* ----------------------------------------------------------------------------
+   9.4. Why Choose Us Banner
+---------------------------------------------------------------------------- */
+.whychooseus-banner {
+    background-color: var(--secondary);
+    position: relative;
+    z-index: 1;
+}
+    .whychooseus-banner::before {
+        background-image: url('https://fabulux1.foxcreation.net/assets/images/background-foundation.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        height: 100%;
+        inset: 0;
+        opacity: 0.5;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+/* ----------------------------------------------------------------------------
+   9.5. Appointment CTA Banner
+---------------------------------------------------------------------------- */
+.banner-appointment-cta {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/calltoactionimagebackground.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0em 1em 0em 1em;
+    position: relative;
+}
+
+/* ----------------------------------------------------------------------------
+   9.6. 404 Banner
+---------------------------------------------------------------------------- */
+.banner-notfound {
+    align-items: center;
+    background-color: var(--primary);
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/flowerbackgroundtestimonials.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* ----------------------------------------------------------------------------
+   9.7. Contact Banner
+---------------------------------------------------------------------------- */
+.banner-contact {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/hero-images245.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0px;
+}
+
+
+/* ============================================================================
+   10.0. Navigation & Header
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   10.1. Main Navigation
+---------------------------------------------------------------------------- */
+.navbar {
+    background-color: var(--accent-color);
+    color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-btn {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 0px;
+    box-shadow: none;
+    color: var(--accent-color);
+    display: none;
+    outline: none;
+    padding: 10px 20px;
+    transition: all 0.4s;
+}
+    .nav-btn:hover,
+    .nav-btn:focus {
+        background-color: var(--accent-color);
+        border: 1px solid var(--primary);
+        color: var(--primary);
+    }
+
+.navbar-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-collapse {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------------------
+   10.2. Navigation Links
+---------------------------------------------------------------------------- */
+.nav-link {
+    background-color: var(--accent-color);
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1em;
+    padding: 7px 15px 7px 15px !important;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+    .navbar-nav .nav-link:focus {
+        color: var(--primary);
+    }
+    .nav-link:hover,
+    .nav-link.active,
+    .nav-link.show {
+        background-color: var(--accent-color-2);
+        color: var(--primary) !important;
+    }
+
+.nav-link-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* ----------------------------------------------------------------------------
+   10.3. Dropdown Menu
+---------------------------------------------------------------------------- */
+.dropdown-menu {
+    border: none;
+    border-radius: 0;
+    min-width: 220px;
+    padding: 0;
+}
+
+.dropdown-item {
+    background-attachment: var(--accent-color);
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1em;
+    padding: 15px 15px 15px 15px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+    .dropdown-item.active {
+        background-color: var(--accent-color-2);
+        color: var(--primary);
+    }
+    .dropdown-item:hover {
+        background-color: var(--accent-color-2);
+        color: var(--primary);
+    }
+    .dropdown-item:focus {
+        background-color: var(--accent-color-2);
+        color: var(--primary);
+    }
+
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+/* ----------------------------------------------------------------------------
+   10.4. Logo
+---------------------------------------------------------------------------- */
+.logo-container.header-logo {
+    width: 20%;
+}
+    .logo-container.header-logo img {
+        width: 47%;
+    }
+
+.navbar-cta-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 20%;
+}
+
+
+/* ============================================================================
+   11.0. Sidebar Navigation
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   11.1. Sidebar Overlay
+---------------------------------------------------------------------------- */
+.sidebar-overlay {
+    background: var(--accent-sidebar-overlay);
+    height: 100vh;
+    left: -100%;
+    position: fixed;
+    top: 0;
+    transition: left 0.4s ease-in-out;
+    width: 100%;
+    z-index: 10;
+}
+    .sidebar-overlay.active {
+        left: 0;
+    }
+
+/* ----------------------------------------------------------------------------
+   11.2. Sidebar Container
+---------------------------------------------------------------------------- */
+.sidebar {
+    background: var(--accent-color);
+    color: var(--primary);
+    height: 100%;
+    left: -350px;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 0px 16px 0px 5px;
+    position: fixed;
+    top: 0;
+    transition: transform 0.4s ease-in-out;
+    width: 350px;
+    z-index: 1000;
+}
+    .sidebar.active {
+        transform: translateX(350px);
+    }
+    .sidebar::-webkit-scrollbar {
+        width: 5px;
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+        background: gray;
+        border-radius: 5px;
+    }
+
+.sidebar-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+}
+    .sidebar-header .logo {
+        width: 75%;
+    }
+
+.close-btn-sidebar {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 0px;
+    color: var(--accent-color);
+    cursor: pointer;
+    display: inline-block;
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1em;
+    outline: none;
+    padding: 8px 18px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 300ms;
+}
+    .close-btn-sidebar:hover {
+        background-color: var(--accent-color);
+        color: var(--primary);
+    }
+
+/* ----------------------------------------------------------------------------
+   11.3. Sidebar Menu
+---------------------------------------------------------------------------- */
+.sidebar-menu {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    background-color: var(--accent-color);
+    color: var(--accent-color-4);
+    display: block;
+    padding: 10px 15px 10px 15px;
+    transition: all 0.3s ease;
+}
+    .sidebar-menu li:hover,
+    .sidebar-menu li.active,
+    .sidebar-menu li.active > a {
+        background-color: var(--secondary);
+        color: var(--primary);
+    }
+
+.sidebar-menu a {
+    color: var(--accent-color-4);
+    font-family: var(--font-family-text);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.sidebar-dropdown {
+    color: var(--accent-color-4);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-dropdown .dropdown-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar-dropdown-btn {
+    background: none;
+    border: 1px solid var(--primary);
+    border-radius: 24px;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 4px 18px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-dropdown-menu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    padding-left: 0px;
+    padding-top: 0;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+    .sidebar-dropdown-menu li {
+        padding: 10px 0px 10px 0px;
+    }
+    .sidebar-dropdown-menu.active {
+        max-height: 100%;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+.below-dropdown {
+    margin-top: 0px;
+    transition: margin-top 0.1s ease-in-out;
+}
+
+
+/* ============================================================================
+   12.0. Page Sections
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   12.1. Home Banner Content
+---------------------------------------------------------------------------- */
+.banner-home-content {
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 1em 1em 1em 1em;
+    width: 57%;
+}
+    .banner-home-content .home-content-description {
+        width: 60%;
+    }
+
+.home-contact-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+    transition: all 0.4s ease;
+}
+    .home-contact-container:hover {
+        transform: translateY(-8px);
+    }
+    .home-contact-container .contact-home-icon {
+        align-items: center;
+        aspect-ratio: 1/1;
+        background-color: var(--accent-color);
+        border-radius: 50%;
+        color: var(--primary);
+        display: flex;
+        fill: var(--primary);
+        font-size: 24px;
+        height: 48px;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+        transition: all 300ms ease-in-out;
+        width: 48px;
+    }
+
+/* Banner Inner Content */
+.banner-inner-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 57%;
+    overflow: hidden;
+    padding: 1em 1em 1em 1em;
+    text-align: center;
+}
+
+.banner-inner-title {
+    color: var(--accent-color);
+}
+
+.banner-inner-excerpt {
+    color: var(--accent-color);
+    width: 60%;
+}
+
+/* Banner Notfound Content */
+.banner-notfound-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-notfound-title { color: var(--accent-color); }
+.banner-notfound-subtitle { color: var(--accent-color); }
+.banner-notfound-excerpt { color: var(--accent-color); }
+
+/* ----------------------------------------------------------------------------
+   12.2. About Section
+---------------------------------------------------------------------------- */
+
+/* About Intro */
+.about-intro {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.about-intro__main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.about-intro__content-container {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/backgroundflower11.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    position: relative;
+    width: 55%;
+    z-index: 1;
+}
+
+.about-intro__content-description {
+    margin: 0px 100px 10px 0px;
+}
+
+.about-intro__content-spacer {
+    height: 20px;
+}
+
+.about-intro__image-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+}
+
+.about-intro__image-decoration {
+    border: 1px solid var(--accent-color-2);
+    left: 0;
+    position: absolute;
+    top: -28px;
+    width: 90%;
+    z-index: 1;
+}
+    .about-intro__image-decoration .image-spacer {
+        height: 500px;
+    }
+
+/* About Benefits */
+.about-benefits {
+    background-color: var(--secondary);
+    color: var(--primary);
+}
+
+.about-benefits__main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.about-benefits__content-container {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/backgroundflower11.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    position: relative;
+    width: 55%;
+    z-index: 1;
+}
+
+.about-benefit__content-description {
+    margin: 0px 100px 10px 0px;
+}
+
+.about-benefits__content-spacer {
+    height: 20px;
+}
+
+.about-benefits__image-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+}
+
+.about-benefits__image-decoration {
+    border: 1px solid var(--accent-color-2);
+    left: 0;
+    position: absolute;
+    top: -28px;
+    width: 90%;
+    z-index: 1;
+}
+    .about-benefits__image-decoration .image-spacer {
+        height: 500px;
+    }
+
+.about-benefits__list-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+}
+
+.about-benefits__icon-list-container {
+    border-radius: 0px;
+    display: inline-block;
+}
+
+.about-benefits__icon-list {
+    background-color: var(--primary);
+    color: var(--accent-color);
+    fill: var(--accent-color);
+    font-size: 17px;
+    height: auto;
+    padding: 0.5em;
+    width: 100%;
+}
+
+/* About Experience */
+.about-experience__main-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.about-experience__content-container {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/backgroundflower11.png');
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    justify-content: flex-end;
+    width: 55%;
+}
+
+.about-experience__content-description {
+    margin: 0px 100px 10px 0px;
+}
+
+.about-experience__highlight-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 0em 0em 0em 5em;
+    width: 45%;
+}
+
+/* ----------------------------------------------------------------------------
+   12.3. Service Section
+---------------------------------------------------------------------------- */
+.service-content-container {
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.service-container {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 1px solid var(--accent-color-2);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 2em 2em 2em 2em;
+    position: relative;
+    width: auto;
+    z-index: 1;
+}
+    .service-container::before {
+        background-image: linear-gradient(180deg, var(--accent-color-3) 0%, var(--accent-color-4) 100%);
+        content: '';
+        height: 100%;
+        inset: 0;
+        opacity: 0.5;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+    .service-container .service-content-spacer {
+        height: 450px;
+    }
+
+.service-container--cinematic-makeup {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/2cinematicservicesmakeup.jpg');
+}
+
+.service-container--fashion-makeup {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/servicesmakeupfashiongoal.jpg');
+}
+
+.service-container--bridal-makeup {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/eventservices123.jpg');
+}
+
+.service-container--hair-style {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/serviceshairstyle11.jpg');
+}
+
+/* ----------------------------------------------------------------------------
+   12.4. Why Choose Us Section
+---------------------------------------------------------------------------- */
+.whychooseus-content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.whychooseus-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    width: 55%;
+}
+
+.whychooseus-content-description {
+    margin: 0px 100px 10px 0px;
+}
+
+.chooseus-container {
+    align-items: start;
+    display: flex;
+    flex-direction: row;
+    gap: 20px 20px;
+}
+
+.chooseus-icon {
+    align-items: center;
+    align-self: flex-start;
+    aspect-ratio: 1/1;
+    background-color: var(--primary);
+    border-radius: 0px;
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    font-size: 1.063rem;
+    height: 30px;
+    justify-content: center;
+    min-height: auto;
+    padding: 8px;
+    width: 30px;
+}
+
+.whychooseus-image-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+    z-index: 1;
+}
+
+.whychooseus-decoration-border {
+    border: 1px solid var(--accent-color-2);
+    left: 0;
+    position: absolute;
+    top: -28px;
+    width: 90%;
+    z-index: 1;
+}
+    .whychooseus-decoration-border .image-spacer {
+        height: 500px;
+    }
+
+.whychooseus-decoration-paint {
+    bottom: -70px;
+    position: absolute;
+    right: 0px;
+    width: 75%;
+    z-index: 3;
+}
+
+/* ----------------------------------------------------------------------------
+   12.5. Testimonial Section
+---------------------------------------------------------------------------- */
+.testimonial-quote-icon {
+    align-items: center;
+    aspect-ratio: 1/1;
+    background-color: var(--primary);
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    color: var(--accent-color);
+    display: flex;
+    font-size: 58px;
+    justify-content: center;
+    padding: 32px 32px;
+    position: relative;
+    text-align: center;
+    transform: translateY(-100px);
+}
+
+.testimonial-content-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-slider-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.testimonial-slider-wrapper {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    will-change: transform;
+}
+
+.testimonial-slide {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 0 100%;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    text-align: center;
+    transform: scale(0.98);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+    .testimonial-slide.active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+.testimonial-quote {
+    color: var(--accent-color);
+    font-family: var(--font-family-heading);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1em;
+    padding-bottom: 80px;
+}
+
+.testimonial-name {
+    color: var(--accent-color);
+    font-family: var(--font-family-text);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1em;
+    text-align: center;
+}
+
+.testimonial-designation {
+    color: var(--accent-color);
+    font-size: 14px;
+    line-height: 1em;
+}
+
+.testimonial-banner.testimonial-light-banner .testimonial-quote { color: var(--primary); }
+.testimonial-banner.testimonial-light-banner .testimonial-name { color: var(--primary); }
+.testimonial-banner.testimonial-light-banner .testimonial-designation { color: var(--primary); }
+
+.testimonial-nav-container {
+    align-items: center;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonial-nav-btn {
+    background-color: var(--accent-color-2);
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    height: 10px;
+    width: 10px;
+}
+    .testimonial-nav-btn.active {
+        background-color: var(--accent-color);
+        height: 15px;
+        width: 15px;
+    }
+
+.testimonial-banner.testimonial-light-banner .testimonial-nav-btn {
+    background-color: var(--text-color);
+}
+    .testimonial-banner.testimonial-light-banner .testimonial-nav-btn.active {
+        background-color: var(--primary);
+    }
+
+.testimonial-btn-container {
+    display: flex;
+    justify-content: space-between;
+    left: 50%;
+    pointer-events: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    z-index: 50;
+}
+    .testimonial-btn-container i {
+        color: var(--accent-color);
+        font-size: 21px;
+    }
+
+.testimonial-btn {
+    background: transparent;
+    border: 0;
+    pointer-events: auto;
+    z-index: 70;
+}
+
+.testimonial-banner.testimonial-light-banner .testimonial-btn-container i {
+    color: var(--primary);
+}
+
+/* ----------------------------------------------------------------------------
+   12.6. Pricing Section
+---------------------------------------------------------------------------- */
+.pricing-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    width: 55%;
+}
+
+.pricing-image-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    width: 45%;
+}
+
+.pricing-image-decoration {
+    border: 1px solid var(--accent-color-2);
+    position: absolute;
+    right: 0;
+    top: -28px;
+    width: 90%;
+    z-index: 1;
+}
+    .pricing-image-decoration .image-spacer {
+        height: 500px;
+    }
+
+.pricing-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    margin-top: 30px;
+}
+
+.pricing-list {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    gap: 0px 0px;
+}
+
+.pricing-list__heading-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+    width: 40%;
+}
+
+.pricing-sub-heading {
+    font-size: 14px;
+}
+
+.pricing-list__price {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding: 5px 0px;
+    width: 60%;
+}
+
+.pricing-list__line {
+    border-bottom: 1px dashed var(--primary);
+    flex: 1;
+    margin-top: 6px;
+}
+
+.pricing-feature {
+    background-color: var(--primary);
+    bottom: 40px;
+    color: var(--accent-color);
+    display: flex;
+    flex-direction: row;
+    gap: 10px 10px;
+    left: 0;
+    padding: 3em 3em 3em 3em;
+    position: absolute;
+    width: 75%;
+    z-index: 3;
+}
+
+.pricing-feature__value {
+    display: flex;
+    flex-direction: row;
+    gap: 0px 0px;
+}
+
+.pricing-feature__number {
+    color: var(--accent-color);
+    font-family: var(--font-family-highlight);
+    font-size: 84px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1em;
+}
+
+.pricing-feature__symbol {
+    color: var(--accent-color);
+    font-family: var(--font-family-highlight);
+    font-size: 84px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1em;
+}
+
+.pricing-feature__text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 10px;
+}
+
+.pricing-feature__title { color: var(--accent-color); }
+.pricing-feature__desc { color: var(--accent-color); }
+
+/* ----------------------------------------------------------------------------
+   12.7. Appointment CTA
+---------------------------------------------------------------------------- */
+.appointment-cta-content {
+    align-items: center;
+    border-left: 1px solid var(--accent-color-2);
+    display: flex;
+    flex-direction: row;
+    gap: 0px 0px;
+    padding: 15em 0em 6em 0em;
+}
+
+.request-loader-container {
+    display: flex;
+    justify-content: center;
+    width: 7%;
+}
+
+.appointment-cta-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    width: 93%;
+}
+
+/* ----------------------------------------------------------------------------
+   12.8. Team Section
+---------------------------------------------------------------------------- */
+.team-content-container {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    gap: 0px 0px;
+    padding: 2em 2em 2em 2em;
+    position: relative;
+    transition: background-image 0.5s ease;
+    z-index: 1;
+}
+    .team-content-container::before {
+        background-color: transparent;
+        background-image: linear-gradient(180deg, var(--accent-color-3) 0%, var(--primary) 100%);
+        content: '';
+        height: 100%;
+        inset: 0;
+        opacity: 0.54;
+        position: absolute;
+        transition: background-image 0.5s ease;
+        width: 100%;
+        z-index: -1;
+    }
+    .team-content-container:hover::before {
+        background-image: linear-gradient(180deg, var(--accent-color-3) 0%, var(--accent-color-3) 100%);
+    }
+
+.team-name-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    text-align: center;
+    width: 100%;
+}
+    .team-name-container .content-spacer {
+        border: 1px solid var(--accent-color);
+        height: 400px;
+        width: 100%;
+    }
+
+.team-name {
+    background-color: var(--accent-color);
+    color: var(--primary);
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+}
+
+.team-details {
+    color: var(--accent-color);
+    font-size: 14px;
+    margin: 10px 0px 0px 0px;
+}
+
+.team-founder-hair-style { background-image: url('https://fabulux1.foxcreation.net/assets/images/teamfabulux1.jpg'); }
+.team-cofounder-fashion-style { background-image: url('https://fabulux1.foxcreation.net/assets/images/teamfabulux3.jpg'); }
+.team-makeup-artist { background-image: url('https://fabulux1.foxcreation.net/assets/images/teamfabulux2.jpg'); }
+.team-makeup-styler { background-image: url('https://fabulux1.foxcreation.net/assets/images/teamfabulux4.jpg'); }
+
+/* ----------------------------------------------------------------------------
+   12.9. Appointment Form
+---------------------------------------------------------------------------- */
+.appointment-header-container {
+    background-color: var(--secondary);
+    color: var(--primary);
+    padding: 7em 1em 3em 1em;
+    position: relative;
+    z-index: 1;
+}
+    .appointment-header-container::before {
+        background-image: url('https://fabulux1.foxcreation.net/assets/images/background-appointment.png');
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: auto;
+        content: '';
+        height: 100%;
+        inset: 0;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+.appointment-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    width: 63%;
+}
+
+.appointment-content-container {
+    background-color: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.appointment-content-description {
+    margin: 0px 100px 10px 0px;
+}
+
+.appointment-content-image {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/whyusimg123.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 33%;
+}
+    .appointment-content-image .image-spacer {
+        height: 50px;
+    }
+
+.appointment-content-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    padding: 0em 18em 6em 0em;
+    width: 66%;
+}
+
+/* ----------------------------------------------------------------------------
+   12.10. Blog Section
+---------------------------------------------------------------------------- */
+.blog-section-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px 30px;
+    overflow: hidden;
+}
+
+.blog-content-title {
+    background-image: url('https://fabulux1.foxcreation.net/assets/images/flower-background.jpg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    width: 35%;
+}
+
+.blog-section-description {
+    width: 70%;
+}
+
+.blog-content-container {
+    width: 65%;
+}
+
+.blog-title {
+    color: var(--primary);
+    font-family: var(--font-family-heading);
+    text-transform: none;
+}
+    .card-blog:hover .blog-title {
+        color: var(--accent-color);
+    }
+    .blog-title.recent-post {
+        color: var(--accent-color);
+    }
+        .blog-title.recent-post:hover {
+            color: var(--secondary);
+        }
+
+.blog-title-excerpt.recent-post {
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.blog-post-content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px 50px;
+}
+
+.blog-post-content-wraper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    width: 66.6666%;
+}
+
+.blog-post-content-sidebar {
+    width: 33.3333%
+}
+
+
+/* ============================================================================
+   13.0. Footer
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   13.1. Footer Content Banner
+---------------------------------------------------------------------------- */
+.footer-content-banner {
+    background-color: var(--primary);
+    color: var(--accent-color);
+    padding: 6em 1em 3em 1em;
+    position: relative;
+    z-index: 1;
+}
+    .footer-content-banner::before {
+        background-image: url('https://fabulux1.foxcreation.net/assets/images/flowerbackgroundtestimonials.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        height: 100%;
+        inset: 0;
+        opacity: 1;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+.footer-content-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+    justify-content: center;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.footer-description {
+    align-self: center;
+    color: var(--accent-color);
+    margin-bottom: 35px;
+    width: 50%;
+}
+
+/* ----------------------------------------------------------------------------
+   13.2. Footer Links
+---------------------------------------------------------------------------- */
+.footer-link {
+    color: var(--accent-color);
+    font-family: var(--font-family-text);
+    margin: 0px 25px 0px 25px;
+    transition: all 0.3s ease;
+}
+    .footer-link:hover {
+        color: var(--accent-color-2);
+    }
+
+.footer-divider {
+    border-bottom: 1px solid var(--accent-color-2);
+    padding: 6px 0px 6px 0px;
+    width: 75%;
+}
+
+.footer-social-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 20px;
+}
+
+/* ----------------------------------------------------------------------------
+   13.3. Footer Copyright
+---------------------------------------------------------------------------- */
+.footer-copyright-container {
+    align-items: center;
+    background-color: var(--accent-color);
+    color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px 10px;
+    justify-content: space-between;
+    padding: 15px 15px 15px 15px;
+}
+
+.legalink-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 5px 5px;
+}
+
+.copyright-text,
+.legallink-text,
+.divider-legalink {
+    color: var(--primary);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+.legallink-text {
+    text-transform: capitalize;
+}
+
+/* ----------------------------------------------------------------------------
+   13.4. Service List
+---------------------------------------------------------------------------- */
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.service-list li {
+    padding: 8px 0;
+    position: relative;
+    padding-left: 25px;
+}
+
+.service-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color-2);
+    font-size: 20px;
+    line-height: 1;
+}
+
+/* ----------------------------------------------------------------------------
+   13.5. Contact Info & Opening Hours
+---------------------------------------------------------------------------- */
+.contact-info-container,
+.opening-hours-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-info-item,
+.opening-hours-item {
+    padding: 15px;
+    background-color: var(--accent-color-3);
+    border-radius: 8px;
+}
+
+.contact-info-item h6,
+.opening-hours-item h6 {
+    margin-bottom: 5px;
+    color: var(--primary);
+}
+
+.contact-info-item p,
+.opening-hours-item p {
+    margin: 0;
+    color: var(--accent-color);
+}
+
+/* ============================================================================
+   14.0. Icon Styles
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   14.1. Footer Icons
+---------------------------------------------------------------------------- */
+.footer-icon {
+    align-items: center;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    color: var(--primary);
+    display: inline-flex;
+    font-size: 19px;
+    height: 40px;
+    justify-content: center;
+    padding: 9px 10px;
+    text-align: center;
+    transition: all 300ms;
+    width: 40px;
+}
+    .footer-icon:hover {
+        background-color: var(--secondary);
+    }
+
+
+/* ============================================================================
+   15.0. Interactive Components
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   15.1. Request Loader
+---------------------------------------------------------------------------- */
+.request-loader {
+    align-items: center;
+    aspect-ratio: 1/1;
+    background-color: var(--primary);
+    border: 1px solid var(--accent-color);
+    border-radius: 50% !important;
+    color: var(--accent-color);
+    display: flex;
+    font-size: 24px;
+    height: 90px;
+    isolation: isolate;
+    justify-content: center;
+    margin: 0px 0px 0px -90px;
+    position: relative;
+    transition: all 300ms ease-in-out;
+    width: 90px;
+    z-index: 10;
+}
+    .request-loader:hover {
+        background-color: var(--accent-color);
+        border: 1px solid var(--accent-color);
+        color: var(--primary);
+    }
+    .request-loader::after,
+    .request-loader::before {
+        align-items: center;
+        animation-iteration-count: infinite;
+        animation-name: ripple;
+        animation-timing-function: cubic-bezier(.65, 0, .34, 1);
+        border: 4px solid currentColor;
+        border-radius: 50%;
+        color: var(--accent-color);
+        content: '';
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        justify-content: center;
+        opacity: 0.2;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+        .request-loader::after {
+            animation-delay: 0.5s;
+            animation-duration: 3s;
+        }
+        .request-loader::before {
+            animation-delay: 0.2s;
+            animation-duration: 3s;
+        }
+
+/* ----------------------------------------------------------------------------
+   15.2. Modal & Video
+---------------------------------------------------------------------------- */
+.modal-overlay {
+    align-items: center;
+    background-color: var(--accent-color-5);
+    display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.video-modal {
+    background-color: var(--accent-color);
+    border-radius: none;
+    max-height: 90%;
+    max-width: 90%;
+    overflow: auto;
+    padding: 0;
+    position: relative;
+}
+    .video-modal iframe {
+        aspect-ratio: 16/9;
+        height: 80vh;
+        width: 100%;
+    }
+
+.modal-close {
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+
+.btn-close {
+    background-color: var(--primary);
+    opacity: 1;
+    padding: 16px 16px 16px 16px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 21;
+}
+
+
+/* ============================================================================
+   16.0. List Styles
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   16.1. Check List
+---------------------------------------------------------------------------- */
+.check-list {
+    list-style: none;
+    padding: 0;
+}
+    .check-list li {
+        color: var(--primary);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4em;
+        margin-bottom: 8px;
+        padding-left: 24px;
+        position: relative;
+        text-align: start;
+    }
+        .check-list li::before {
+            color: var(--primary);
+            content: "\f00c";
+            font-family: "Font Awesome 7 Free";
+            font-size: 16px;
+            font-weight: 700;
+            left: 0;
+            position: absolute;
+        }
+
+
+/* ============================================================================
+   17.0. Accordion Component
+============================================================================ */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 20px;
+}
+
+.accordion .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    color: var(--primary);
+    outline: none;
+}
+
+.accordion .accordion-item .accordion-body {
+    color: var(--text-color);
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 30px 56px 30px 85px;
+    text-align: start;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion .accordion-button {
+    align-items: center;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 0px;
+    color: var(--primary);
+    display: flex;
+    flex-direction: row;
+    font-family: var(--font-family-text);
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: start;
+    line-height: 1em;
+    outline: none;
+    overflow: hidden;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.accordion-button::after {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>');
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-arrow-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v10.793l3.146-3.147a.5.5 0 1 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 1 1 .708-.708L7.5 13.293V2.5A.5.5 0 0 1 8 2z"/></svg>');
+}
+
+.accordion .accordion-button:not(.collapsed) {
+    background-color: var(--primary);
+    border: none;
+    box-shadow: none;
+    color: var(--accent-color);
+    fill: var(--accent-color);
+    outline: none;
+}
+
+
+/* ============================================================================
+   18.0. Animation Utilities
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   18.1. Animate Classes
+---------------------------------------------------------------------------- */
+.animate-box {
+    opacity: 0;
+}
+
+.animated {
+    animation-duration: var(--animation-normal);
+}
+
+.animated-delay-fast {
+    animation-duration: var(--animation-fast);
+}
+
+.animated-delay-slow {
+    animation-duration: var(--animation-slow);
+}
+
+
+/* ============================================================================
+   19.0. Spacing Utilities
+============================================================================ */
+
+/* ----------------------------------------------------------------------------
+   19.1. Flex Gap Spacing
+---------------------------------------------------------------------------- */
+.gspace-0 { gap: 0px 0px; }
+.gspace-1 { gap: 10px 10px; }
+.gspace-2 { gap: 20px 20px; }
+.gspace-3 { gap: 30px 30px; }
+.gspace-4 { gap: 40px 40px; }
+.gspace-5 { gap: 50px 50px; }
+.gspace-100 { gap: 100px 100px; }
+
+.gspace-x-0 { column-gap: 0px; }
+.gspace-x-1 { column-gap: 10px; }
+.gspace-x-2 { column-gap: 20px; }
+.gspace-x-3 { column-gap: 30px; }
+.gspace-x-4 { column-gap: 40px; }
+.gspace-x-5 { column-gap: 50px; }
+.gspace-x-100 { column-gap: 100px; }
+
+.gspace-y-0 { row-gap: 0px; }
+.gspace-y-1 { row-gap: 10px; }
+.gspace-y-2 { row-gap: 20px; }
+.gspace-y-3 { row-gap: 30px; }
+.gspace-y-4 { row-gap: 40px; }
+.gspace-y-5 { row-gap: 50px; }
+.gspace-y-100 { row-gap: 100%; }
+
+/* ----------------------------------------------------------------------------
+   19.2. Grid Spacing
+---------------------------------------------------------------------------- */
+.grid-spacer-0 { --bs-gutter-x: 0px; --bs-gutter-y: 0px; }
+.grid-spacer-1 { --bs-gutter-x: 10px; --bs-gutter-y: 10px; }
+.grid-spacer-2 { --bs-gutter-x: 20px; --bs-gutter-y: 20px; }
+.grid-spacer-3 { --bs-gutter-x: 30px; --bs-gutter-y: 30px; }
+.grid-spacer-4 { --bs-gutter-x: 40px; --bs-gutter-y: 40px; }
+.grid-spacer-5 { --bs-gutter-x: 50px; --bs-gutter-y: 50px; }
+.grid-spacer-100 { --bs-gutter-x: 100px; --bs-gutter-y: 100px; }
+
+.grid-spacer-x-0 { --bs-gutter-x: 0px; }
+.grid-spacer-x-1 { --bs-gutter-x: 10px; }
+.grid-spacer-x-2 { --bs-gutter-x: 20px; }
+.grid-spacer-x-3 { --bs-gutter-x: 30px; }
+.grid-spacer-x-4 { --bs-gutter-x: 40px; }
+.grid-spacer-x-5 { --bs-gutter-x: 50px; }
+.grid-spacer-x-100 { --bs-gutter-x: 100px; }
+
+.grid-spacer-y-0 { --bs-gutter-y: 0px; }
+.grid-spacer-y-1 { --bs-gutter-y: 10px; }
+.grid-spacer-y-2 { --bs-gutter-y: 20px; }
+.grid-spacer-y-3 { --bs-gutter-y: 30px; }
+.grid-spacer-y-4 { --bs-gutter-y: 40px; }
+.grid-spacer-y-5 { --bs-gutter-y: 50px; }
+.grid-spacer-y-100 { --bg-gutter-y: 100px; }
+
+
+/* ============================================================================
+   End of Stylesheet
+============================================================================ */

@@ -1,0 +1,46 @@
+Fabulux is a modern and elegant HTML5 Bootstrap template designed for Makeup Artists, Beauty Salons, Spas, and other beauty-related businesses. This creative template is perfect for showcasing your beauty services, makeup portfolios, beauty blogs, skincare products, cosmetic stores, and more.Whether you're running a beauty salon, freelance makeup business, or beauty academy, Fabulux provides a clean, stylish layout with a professional design and smooth user experience, helping you present your services and products in the most appealing way possible.
+
+<h3>Layout Features</h3>
+<ul>
+<li> Powered by Bootstrap
+<li> Fully Responsive Layout
+<li> Google fonts included
+<li> Free Google Fonts
+<li> Font Awesome Icons
+<li> Flat, Modern and Clean Design
+<li> Cross-browser Compatible with Edge, IE11+, Firefox, Safari, Opera, Chrome
+</ul>
+
+
+<h3>Template Includes</h3>
+<ul>
+<li> Home
+<li> About Us
+<li> Services
+<li> Pricing
+<li> Team
+<li> Contact Us
+<li> FAQs
+<li> 404 Page
+<li> Blog
+<li> Single Post
+</ul>
+
+<h3>Font Used</h3>
+<ul>
+<li> <a href="https://fonts.google.com/specimen/Marcellus" target="_blank">Marcellus</a>
+<li> <a href="https://fonts.google.com/specimen/Catamaran" target="_blank">Catamaran</a>
+<li> <a href="https://fonts.google.com/specimen/Playfair+Display" target="_blank">Playfair Display</a>
+</ul>
+
+<h3>Icon Used</h3>
+<ul>
+<li> <a href="https://fontawesome.com/">Fontawesome</a>
+</ul>
+
+<h3>Credit Images:</h3>
+<ul>
+<li> <a href="https://elements.envato.com/">Envato Elements Stock Photos</a>
+</ul
+
+Note: Images used are for presentation purposes only. Image placeholders are included in the downloadable files. Background images are sourced from the links above, but they are not included in the final download.

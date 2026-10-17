@@ -1,0 +1,135 @@
+/* =========================================================
+   Ziad London — enhancement layer
+   Adds motion & polish on top of the original Fabulux design.
+   Uses the template's own palette (--primary, --secondary, --accent-color-2).
+   ========================================================= */
+
+/* ---------- Text logo (replaces the broken remote image) ---------- */
+.text-logo{display:inline-flex;flex-direction:column;align-items:center;line-height:1;font-family:var(--font-family-heading);color:var(--primary);font-size:30px;letter-spacing:.34em;padding-left:.34em;white-space:nowrap;transition:letter-spacing .6s cubic-bezier(.19,1,.22,1)}
+.text-logo small{font-size:.38em;letter-spacing:.7em;padding-left:.7em;margin-top:.55em;opacity:.8}
+a:hover>.text-logo{letter-spacing:.42em}
+footer .text-logo{color:var(--accent-color);font-size:38px}
+.logo-container.header-logo{width:auto}
+.logo-container.header-logo .text-logo{width:auto}
+.sidebar-header .text-logo{font-size:26px}
+
+/* ---------- Preloader ---------- */
+.zl-loader{position:fixed;inset:0;z-index:99999;background:var(--primary);display:grid;place-items:center;transition:transform 1s cubic-bezier(.77,0,.18,1) .15s,visibility 0s 1.2s}
+.zl-loader.done{transform:translateY(-100%);visibility:hidden}
+.zl-loader .text-logo{color:var(--secondary);font-size:clamp(34px,8vw,58px);overflow:hidden}
+.zl-loader .text-logo span{display:inline-block;transform:translateY(110%);animation:zlRise .9s cubic-bezier(.19,1,.22,1) forwards}
+.zl-loader .text-logo small{opacity:0;animation:zlFade 1s .9s forwards}
+.zl-loader i{position:absolute;left:50%;bottom:22%;width:160px;height:2px;margin-left:-80px;background:rgba(255,255,255,.2);overflow:hidden}
+.zl-loader i::after{content:"";position:absolute;inset:0;background:var(--accent-color-2);transform:translateX(-100%);animation:zlBar 1.6s .2s cubic-bezier(.19,1,.22,1) forwards}
+@keyframes zlRise{to{transform:none}}
+@keyframes zlFade{to{opacity:.8}}
+@keyframes zlBar{to{transform:none}}
+
+/* ---------- Progress bar, cursor glow, to-top ---------- */
+.zl-progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:10000;background:linear-gradient(90deg,var(--primary),var(--accent-color-2));transform-origin:left;transform:scaleX(0)}
+.zl-top{position:fixed;right:22px;bottom:22px;z-index:900;width:52px;height:52px;border-radius:50%;background:var(--primary);color:var(--secondary);border:1px solid var(--accent-color-2);display:grid;place-items:center;opacity:0;transform:translateY(24px) scale(.8);pointer-events:none;transition:.5s cubic-bezier(.19,1,.22,1);box-shadow:0 12px 30px rgba(102,58,48,.35)}
+.zl-top.show{opacity:1;transform:none;pointer-events:auto}
+.zl-top:hover{background:var(--accent-color-2);color:var(--primary);transform:translateY(-5px)}
+.zl-call{position:fixed;left:22px;bottom:22px;z-index:900;display:flex;align-items:center;gap:10px;padding:13px 22px 13px 16px;border-radius:40px;background:var(--primary);color:var(--secondary);font-size:15px;letter-spacing:.04em;box-shadow:0 12px 30px rgba(102,58,48,.35);transition:transform .4s cubic-bezier(.19,1,.22,1)}
+.zl-call:hover{transform:translateY(-4px);color:var(--secondary)}
+.zl-call i{animation:zlRing 2.6s infinite}
+@keyframes zlRing{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(-18deg)}70%{transform:rotate(16deg)}75%{transform:rotate(-12deg)}80%{transform:rotate(10deg)}85%{transform:rotate(0)}}
+@media (max-width:560px){.zl-call span{display:none}.zl-call{padding:15px}}
+
+/* ---------- Header ---------- */
+header{transition:box-shadow .5s,transform .6s cubic-bezier(.19,1,.22,1),background-color .4s}
+header.zl-scrolled{box-shadow:0 10px 40px rgba(102,58,48,.14)}
+.nav-link{position:relative;overflow:hidden}
+
+/* ---------- Hero: slow Ken Burns + floating dust ---------- */
+.banner-home::before,.banner-inner::before{animation:zlKen 22s ease-in-out infinite alternate;will-change:transform}
+@keyframes zlKen{from{transform:scale(1)}to{transform:scale(1.14) translate(-1.5%,1%)}}
+.banner-home{isolation:isolate}
+#zlDust{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.banner-home-content,.banner-inner-container{position:relative;z-index:2}
+.home-heading-wrapper{background:linear-gradient(100deg,#fff 20%,var(--accent-color-2) 45%,#fff 60%,var(--accent-color-2) 85%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:zlShine 7s linear infinite}
+@keyframes zlShine{to{background-position:-250% 0}}
+.banner-inner-title{animation:zlTitle 1.4s cubic-bezier(.19,1,.22,1) both .2s}
+@keyframes zlTitle{from{opacity:0;letter-spacing:.2em;transform:translateY(30px)}to{opacity:1;letter-spacing:normal;transform:none}}
+.contact-home-icon{position:relative}
+.home-contact-container>div:first-child{position:relative}
+.home-contact-container>div:first-child::after{content:"";position:absolute;inset:0;border-radius:50%;border:1px solid var(--accent-color);animation:zlPulse 2.4s infinite;pointer-events:none}
+@keyframes zlPulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.8);opacity:0}}
+
+/* ---------- Marquee strip ---------- */
+.zl-marquee{background:var(--primary);color:var(--secondary);overflow:hidden;padding:26px 0;border-block:1px solid rgba(231,211,197,.25)}
+.zl-marquee-track{display:flex;width:max-content;animation:zlMarq 40s linear infinite}
+.zl-marquee:hover .zl-marquee-track{animation-play-state:paused}
+.zl-marquee span{font-family:var(--font-family-heading);font-size:clamp(22px,3vw,34px);padding:0 30px;white-space:nowrap;display:flex;align-items:center;gap:60px}
+.zl-marquee span::after{content:"✦";font-size:14px;color:var(--accent-color-2)}
+@keyframes zlMarq{to{transform:translateX(-50%)}}
+
+/* ---------- Buttons ---------- */
+.btn{position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.19,1,.22,1),box-shadow .35s,background-color .3s,color .3s}
+.btn::after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);transition:left .8s}
+.btn:hover::after{left:140%}
+.btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(102,58,48,.28)}
+
+/* ---------- Images: reveal, zoom, parallax ---------- */
+.image-container{overflow:hidden}
+.image-container img{transition:transform 1.4s cubic-bezier(.19,1,.22,1);will-change:transform}
+.image-container:hover img{filter:saturate(1.08)}
+.zl-img img{clip-path:inset(0 0 100% 0);transform:scale(1.3);transition:clip-path 1.5s cubic-bezier(.19,1,.22,1),transform 2.2s cubic-bezier(.19,1,.22,1)}
+.zl-img.in img{clip-path:inset(0)}
+.zl-img.in img{transform:scale(1.12)}
+.zl-img.settled img{transition:transform .12s linear;clip-path:none}
+
+/* ---------- Heading underline draw ---------- */
+.sub-heading-line,.sub-heading-double{position:relative}
+.sub-heading-line::before,.sub-heading-line::after,.sub-heading-double::before,.sub-heading-double::after{transform-origin:left;animation:zlLine 1.6s cubic-bezier(.19,1,.22,1) both .4s}
+@keyframes zlLine{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* ---------- Service cards ---------- */
+.service-container{overflow:hidden;transition:transform .6s cubic-bezier(.19,1,.22,1),box-shadow .6s;transform-style:preserve-3d;will-change:transform}
+.service-container::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 55%);opacity:0;transition:opacity .4s;z-index:-1;pointer-events:none}
+.service-container:hover{box-shadow:0 30px 60px rgba(102,58,48,.35)}
+.service-container:hover::after{opacity:1}
+.service-container::before{transition:opacity .6s}
+.service-container:hover::before{opacity:.8}
+.service-description-card{transition:transform .6s cubic-bezier(.19,1,.22,1)}
+.service-container:hover .service-description-card{transform:translateY(-10px)}
+
+/* ---------- Service lists ---------- */
+.service-list li{transition:transform .4s cubic-bezier(.19,1,.22,1),color .3s;opacity:0;transform:translateX(-22px)}
+.service-list.zl-in li{opacity:1;transform:none;transition:opacity .8s cubic-bezier(.19,1,.22,1),transform .8s cubic-bezier(.19,1,.22,1),color .3s;transition-delay:calc(var(--n)*.05s)}
+.service-list.zl-in li:hover{transform:translateX(10px);color:var(--primary)}
+
+/* ---------- Floating decorative borders & icons ---------- */
+.about-intro__image-decoration,.whychooseus-decoration-border,.about-benefits__image-decoration,.pricing-image-decoration{animation:zlFloat 7s ease-in-out infinite}
+@keyframes zlFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(10px,-12px)}}
+.whychooseus-decoration-paint{animation:zlFloat 9s ease-in-out infinite reverse}
+.chooseus-icon,.about-benefits__icon-list-container{transition:transform .6s cubic-bezier(.19,1,.22,1),background-color .3s}
+.chooseus-container:hover .chooseus-icon,.about-benefits__list-container:hover .about-benefits__icon-list-container{transform:rotate(360deg) scale(1.1)}
+.request-loader{animation:zlBeat 2.4s infinite}
+@keyframes zlBeat{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+.footer-icon{transition:transform .5s cubic-bezier(.19,1,.22,1)}
+.footer-icon:hover{transform:translateY(-8px) rotate(360deg)}
+.footer-link{position:relative}
+.footer-link::after{content:"";position:absolute;left:0;bottom:-2px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.19,1,.22,1)}
+.footer-link:hover::after{transform:scaleX(1);transform-origin:left}
+
+/* Contact / hours items */
+.contact-info-item,.opening-hours-item,.pricing-list{transition:transform .5s cubic-bezier(.19,1,.22,1)}
+.contact-info-item:hover,.opening-hours-item:hover{transform:translateX(10px)}
+.pricing-list:hover{transform:translateX(8px)}
+
+/* ---------- Page transition ---------- */
+body{animation:zlIn .9s ease both}
+@keyframes zlIn{from{opacity:0}to{opacity:1}}
+body.zl-leave{opacity:0;transition:opacity .35s}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .service-list li{opacity:1;transform:none}.zl-img img{clip-path:none}
+}
+
+/* ---------- Legibility: the template tiles a model photo behind these text blocks.
+   Wash it back into a soft watermark so the copy stays readable. ---------- */
+.about-intro__content-container,.about-benefits__content-container{
+  background-image:linear-gradient(rgba(255,246,239,.94),rgba(255,246,239,.94)),url('https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&q=60&w=900');
+  background-size:cover}

@@ -1,0 +1,671 @@
+/* 01. Tablet Responsive */
+
+@media screen and (max-width: 991.98px) {
+    h1{
+        font-size: 60px;
+    }
+    h2{
+        font-size: 42px;
+    }
+    h3{
+        font-size: 28px;
+    }
+    h3{
+        font-size: 24px;
+    }
+    h4{
+        font-size: 22px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    h6{
+        font-size: 16px;
+    }
+    .nav-btn{
+        display: block;
+    }
+    .navbar-nav{
+        display: none;
+    }
+    .navbar-cta-container{
+        display: none;
+    }
+    .logo-container.header-logo{
+        width: 40%;
+    }
+    .banner-home-content{
+        width: 100%;
+    }
+    .banner-inner-container{
+        max-width: 100%;
+    }
+    .about-intro__main-content{
+        flex-direction: column;
+    }
+    .about-intro__content-container{
+        width: 100%;
+    }
+    .about-intro__image-container{
+        width: 100%;
+    }
+    .about-benefits__main-content{
+        flex-direction: column;
+    }
+    .about-benefits__content-container{
+        width: 100%;
+    }
+    .about-benefits__image-container{
+        width: 100%;
+    }
+    .about-experience__main-content{
+        flex-direction: column;
+    }
+    .about-experience__content-container{
+        width: 100%;
+    }
+    .about-experience__highlight-container{
+        width: 100%;
+        align-items: center;
+        padding: 0px;
+    }
+    .whychooseus-content-container{
+        flex-direction: column;
+    }
+    .whychooseus-content{
+        width: 100%;
+    }
+    .whychooseus-image-container{
+        width: 100%;
+    }
+    .chooseus-image-paint img{
+        width: 49%;
+    }
+    .pricing-image-container{
+        width: 100%;
+    }
+    .pricing-content{
+        width: 100%;
+    }
+    .pricing-feature{
+        width: 65%;
+    }
+    .pricing-feature__value{
+        gap: 20px 20px;
+    }
+    .pricing-feature__number{
+        font-size: 60px;
+    }
+    .pricing-feature__symbol{
+        font-size: 60px;
+    }
+    .banner-contact-cta{
+        background-position: bottom right;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .contact-cta-content{
+        flex-direction: column;
+        border: 0px;
+        gap: 50px 50px;
+        align-items: start;
+    }
+    .request-loader-container{
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .request-loader{
+        width: 60px;
+        height: 60px;
+        margin: 0px;
+    }
+    .contact-cta-heading{
+        width: 100%;
+    }
+    .appointment-content-container{
+        gap: 20px 20px;
+    }
+    .appointment-header-wrapper{
+        width: 100%;
+    }
+    .appointment-header-container::before{
+        background-position: center center;
+    }
+    .appointment-content-image{
+        width: 40%;
+    }
+    .appointment-content-form{
+        width: 60%;
+        padding: 0em 1em 6em 1em;
+    }
+    .blog-section-container{
+        flex-direction: column;
+    }
+    .blog-content-title{
+        width: 100%;
+    }
+    .blog-content-container{
+        width: 100%;
+    }
+    .blog-post-content-container{
+        flex-direction: column;
+    }
+    .blog-post-content-wraper{
+        width: 100%;
+    }
+    .blog-post-content-sidebar{
+        width: 100%;
+    }
+    .service-content-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .banner-appointment-cta{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right bottom;
+    }
+    .appointment-cta-content{
+        gap: 50px 50px;
+        border-left: 0px;
+        flex-direction: column;
+    }
+    .appointment-cta-heading{
+        width: 100%;
+    }
+    .banner-contact{
+        padding: 1em 1em 1em 1em;
+    }
+    .card-contact{
+        width: 100%;
+    }
+    .sub-heading-w-20{
+        width: 50%;
+    }
+}
+
+/* 02. Mobile Responsive */
+
+@media screen and (max-width: 767.98px) {
+    h1{
+        font-size: 44px;
+    }
+    h2{
+        font-size: 28px;
+    }
+    h3{
+        font-size: 22px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    h5{
+        font-size: 18px;
+    }
+    h6{
+        font-size: 16px;
+    }
+    button, a, .btn{
+        font-size: 14px;
+    }
+    .logo-container.header-logo{
+        width: 50%;
+    }
+    .logo-container.header-logo img{
+        width: 80%;
+    }
+    .banner-inner-excerpt{
+        width: 100%;
+    }
+    .sub-heading-line,
+    .sub-heading-w-20,
+    .sub-heading-w-20,
+    .sub-heading-w-25,
+    .sub-heading-w-30,
+    .sub-heading-w-35,
+    .sub-heading-w-50,
+    .sub-heading-double {
+        width: 100%;
+    }
+    .sub-heading-line::after{
+        flex-grow: 1;
+    }
+    .sub-heading-double::after,
+    .sub-heading-double::before {
+        flex-grow: 0;
+        width: 30px;
+    }
+    .banner-home-content .home-content-description{
+        width: 100%;
+    }
+    .card-about-intro__highlight{
+        width: 100%;
+        padding: 2em 2em 2em 2em;
+        bottom: -230px;
+    }
+    .about-intro__main-content{
+        gap: 100px 100px;
+    }
+    .about-intro__content-description{
+        margin: 0px 0px 0px 0px;
+    }
+    .about-intro__image-container{
+        margin-top: 200px;
+    }
+    .about-intro__highlight-image{
+        width: 100%;
+    }
+    .about-intro__image-decoration .image-spacer{
+        height: 350px;
+    }
+    .about-benefits__main-content{
+        gap: 30px 30px;
+    }
+    .about-benefit__content-description{
+        margin: 0px 0px 0px 0px;
+    }
+    .about-benefits__image-container{
+        margin-top: 200px;
+    }
+    .about-benefits__highlight-image{
+        width: 100%;
+    }
+    .about-benefits__image-decoration .image-spacer{
+        height: 350px;
+    }
+    .about-experience__main-content{
+        gap: 30px 30px;
+    }
+    .about-experience__content-description{
+        margin: 0px 0px 0px 0px;
+    }
+    .service-content-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .whychooseus-content-description{
+        margin: 0px 0px 0px 0px;
+    }
+    .whychooseus-decoration-border .image-spacer{
+        height: 350px;
+    }
+    .testimonial-name{
+        font-size: 18px;
+    }
+    .pricing-image-decoration .image-spacer{
+        height: 350px;
+    }
+    .pricing-list__heading-container{
+        width: 100%;
+    }
+    .pricing-list__price{
+        width: 100%;
+    }
+    .pricing-content{
+        margin-top: 220px;
+    }
+    .pricing-list{
+        flex-direction: column;
+    }
+    .pricing-feature{
+        width: 100%;
+        flex-direction: column;
+        gap: 20px 20px;
+        padding: 2em 2em 2em 2em;
+        bottom: -225px;
+    }
+    .pricing-feature__number{
+        font-size: 44px;
+    }
+    .pricing-feature__symbol{
+        font-size: 44px;
+    }
+    .appointment-content-container{
+        flex-direction: column;
+    }
+    .appointment-content-description{
+        margin: 0px 0px 0px 0px;
+    }
+    .appointment-content-image{
+        width: 100%;
+    }
+    .appointment-content-image .image-spacer{
+        height: 350px;
+    }
+    .appointment-content-form{
+        width: 100%;
+    }
+    .blog-section-description{
+        width: 100%;
+    }
+    .footer-description{
+        width: 100%;
+    }
+    .footer-link{
+        margin: 7.5px 7.5px 7.5px 7.5px;
+    }
+    .footer-divider{
+        width: 100%
+    }
+    .footer-icon{
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    .footer-copyright-container{
+        justify-content: center;
+    }
+}
+
+/* 03. Mobile Spacing Responsive */
+
+@media screen and (min-width: 767.98px){
+
+    /* Flex spacing (gap) */
+
+    .gspace-md-0 { 
+        gap: 0px 0px; 
+    }
+    .gspace-md-1 { 
+        gap: 10px 10px; 
+    }
+    .gspace-md-2 { 
+        gap: 20px 20px; 
+    }
+    .gspace-md-3 { 
+        gap: 30px 30px; 
+    }
+    .gspace-md-4 { 
+        gap: 40px 40px; 
+    }
+    .gspace-md-5 { 
+        gap: 50px 50px; 
+    }
+    .gspace-md-100 { 
+        gap: 100px 100px; 
+    }
+
+    /* Grid spacing (column-gap) */
+
+    .gspace-x-md-0 { 
+        column-gap: 0px; 
+    }
+    .gspace-x-md-0 { 
+        column-gap: 0px; 
+    }
+    .gspace-x-md-1 { 
+        column-gap: 10px; 
+    }
+    .gspace-x-md-2 { 
+        column-gap: 20px; 
+    }
+    .gspace-x-md-3 { 
+        column-gap: 30px; 
+    }
+    .gspace-x-md-4 { 
+        column-gap: 40px; 
+    }
+    .gspace-x-md-5 { 
+        column-gap: 50px; 
+    }
+    .gspace-x-md-100 { 
+        column-gap: 100px; 
+    }
+
+    /* Grid spacing (row-gap) */
+
+    .gspace-y-md-0 { 
+        row-gap: 0px; 
+    }
+    .gspace-y-md-1 { 
+        row-gap: 10px; 
+    }
+    .gspace-y-md-2 { 
+        row-gap: 20px; 
+    }
+    .gspace-y-md-3 { 
+        row-gap: 30px; 
+    }
+    .gspace-y-md-4 { 
+        row-gap: 40px; 
+    }
+    .gspace-y-md-5 { 
+        row-gap: 50px; 
+    }
+    .gspace-y-md-100 { 
+        row-gap: 100px; 
+    }
+
+    /* Grid spacing (row-gap & column-gap) */
+
+    .grid-spacer-md-1 { 
+        --bs-gutter-x: 10px; 
+        --bs-gutter-y: 10px; 
+    }
+    .grid-spacer-md-2 { 
+        --bs-gutter-x: 20px; 
+        --bs-gutter-y: 20px; 
+    }
+    .grid-spacer-md-3 { 
+        --bs-gutter-x: 30px; 
+        --bs-gutter-y: 30px; 
+    }
+    .grid-spacer-md-4 { 
+        --bs-gutter-x: 40px; 
+        --bs-gutter-y: 40px; 
+    }
+    .grid-spacer-md-5 { 
+        --bs-gutter-x: 50px; 
+        --bs-gutter-y: 50px; 
+    }
+    .grid-spacer-md-100 { 
+        --bs-gutter-x: 100px; 
+        --bs-gutter-y: 100px; 
+    }
+
+    /* Grid spacing (column-gap) */
+
+    .grid-spacer-x-md-0 { 
+        --bs-gutter-x: 0px; 
+    }
+    .grid-spacer-x-md-1 { 
+        --bs-gutter-x: 10px; 
+    }
+    .grid-spacer-x-md-2 { 
+        --bs-gutter-x: 20px; 
+    }
+    .grid-spacer-x-md-3 { 
+        --bs-gutter-x: 30px; 
+    }
+    .grid-spacer-x-md-4 { 
+        --bs-gutter-x: 40px; 
+    }
+    .grid-spacer-x-md-5 { 
+        --bs-gutter-x: 50px; 
+    }
+    .grid-spacer-x-md-100 { 
+        --bs-gutter-x: 100px; 
+    }
+
+    /* Grid spacing (row-gap) */
+
+    .grid-spacer-y-md-0 { 
+        --bs-gutter-y: 0px; 
+    }
+    .grid-spacer-y-md-1 { 
+        --bs-gutter-y: 10px; 
+    }
+    .grid-spacer-y-md-2 { 
+        --bs-gutter-y: 20px; 
+    }
+    .grid-spacer-y-md-3 { 
+        --bs-gutter-y: 30px; 
+    }
+    .grid-spacer-y-md-4 { 
+        --bs-gutter-y: 40px; 
+    }
+    .grid-spacer-y-md-5 { 
+        --bs-gutter-y: 50px; 
+    }
+    .grid-spacer-y-md-100 { 
+        --bs-gutter-y: 100px; 
+    }
+}
+
+/* 04. Table Spacing Responsive */
+
+@media screen and (min-width: 991.98px){
+    /* Flex spacing (gap) */
+    .gspace-lg-0 { 
+        gap: 0px 0px; 
+    }
+    .gspace-lg-1 { 
+        gap: 10px 10px; 
+    }
+    .gspace-lg-2 { 
+        gap: 20px 20px; 
+    }
+    .gspace-lg-3 { 
+        gap: 30px 30px; 
+    }
+    .gspace-lg-4 { 
+        gap: 40px 40px; 
+    }
+    .gspace-lg-5 { 
+        gap: 50px 50px; 
+    }
+    .gspace-lg-100{
+        gap: 100px 100px;
+    }
+
+    /* Grid spacing (column-gap) */
+
+    .gspace-x-lg-0 { 
+        column-gap: 0px;
+    }
+    .gspace-x-lg-1 { 
+        column-gap: 10px; 
+    }
+    .gspace-x-lg-2 {
+         column-gap: 20px; 
+    }
+    .gspace-x-lg-3 { 
+        column-gap: 30px; 
+    }
+    .gspace-x-lg-4 { 
+        column-gap: 40px; 
+    }
+    .gspace-x-lg-5 { 
+        column-gap: 50px; 
+    }
+    .gspace-x-lg-100{
+        column-gap: 100px;
+    }
+
+    /* Grid spacing (row-gap) */
+
+    .gspace-y-lg-0 { 
+        row-gap: 0px; 
+    }
+    .gspace-y-lg-1 { 
+        row-gap: 10px; 
+    }
+    .gspace-y-lg-2 { 
+        row-gap: 20px; 
+    }
+    .gspace-y-lg-3 { 
+        row-gap: 30px; 
+    }
+    .gspace-y-lg-4 { 
+        row-gap: 40px; 
+    }
+    .gspace-y-lg-5 { 
+        row-gap: 50px; 
+    }
+    .gspace-y-lg-100 {
+        row-gap: 100px;
+    }
+
+    /* Grid spacing (row-gap & column-gap) */
+
+    .grid-spacer-lg-0 { 
+        --bs-gutter-x: 0px; 
+        --bs-gutter-y: 0px; 
+    }
+    .grid-spacer-lg-1 { 
+        --bs-gutter-x: 10px; 
+        --bs-gutter-y: 10px; 
+    }
+    .grid-spacer-lg-2 { 
+        --bs-gutter-x: 20px; 
+        --bs-gutter-y: 20px; 
+    }
+    .grid-spacer-lg-3 { 
+        --bs-gutter-x: 30px; 
+        --bs-gutter-y: 30px; 
+    }
+    .grid-spacer-lg-4 { 
+        --bs-gutter-x: 40px; 
+        --bs-gutter-y: 40px; 
+    }
+    .grid-spacer-lg-5 { 
+        --bs-gutter-x: 50px; 
+        --bs-gutter-y: 50px; 
+    }
+    .grid-spacer-lg-100 { 
+        --bs-gutter-x: 100px; 
+        --bs-gutter-y: 100px; 
+    }
+
+    /* Grid spacing (column-gap) */
+
+    .grid-spacer-x-lg-0 { 
+        --bs-gutter-x: 0px; 
+    }
+    .grid-spacer-x-lg-1 { 
+        --bs-gutter-x: 10px; 
+    }
+    .grid-spacer-x-lg-1 { 
+        --bs-gutter-x: 10px; 
+    }
+    .grid-spacer-x-lg-2 { 
+        --bs-gutter-x: 20px;
+    }
+    .grid-spacer-x-lg-3 { 
+        --bs-gutter-x: 30px; 
+    }
+    .grid-spacer-x-lg-4 { 
+        --bs-gutter-x: 40px; 
+    }
+    .grid-spacer-x-lg-5 { 
+        --bs-gutter-x: 50px; 
+    }
+    .grid-spacer-x-lg-100 { 
+        --bs-gutter-x: 100px; 
+    }
+
+    /* Grid spacing (row-gap) */
+
+    .grid-spacer-y-lg-0 { 
+        --bs-gutter-y: 0px; 
+    }
+    .grid-spacer-y-lg-1 { 
+        --bs-gutter-y: 10px; 
+    }
+    .grid-spacer-y-lg-1 { 
+        --bs-gutter-y: 10px; 
+    }
+    .grid-spacer-y-lg-2 { 
+        --bs-gutter-y: 20px; 
+    }
+    .grid-spacer-y-lg-3 { 
+        --bs-gutter-y: 30px; 
+    }
+    .grid-spacer-y-lg-4 { 
+        --bs-gutter-y: 40px; 
+    }
+    .grid-spacer-y-lg-5 { 
+        --bs-gutter-y: 50px; 
+    }
+    .grid-spacer-y-lg-100 { 
+        --bs-gutter-y: 100px; 
+    }
+}

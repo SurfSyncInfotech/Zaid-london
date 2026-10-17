@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ziad London Hair & Beauty Salon</title>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="logo-container header-logo">
+                    <a class="navbar-brand" href="./index.html"><img src="https://www.ziadlondon.uk/wp-content/uploads/2026/02/ChatGPT-Image-Feb-16-2026-12_24_01-PM.png" class="img-fluid" alt="Ziad London Logo"></a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <button class="btn nav-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./services.html">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./contact.html">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="navbar-cta-container">
+                    <a href="./contact.html" class="btn btn-primary btn-nohover">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sidebar Section -->
+    <aside>
+        <div class="sidebar-overlay"></div>
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="https://www.ziadlondon.uk/wp-content/uploads/2026/02/ChatGPT-Image-Feb-16-2026-12_24_01-PM.png" class="logo" alt="Ziad London Logo">
+                </div>
+                <button class="close-btn-sidebar"><span>X</span></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="./services.html">Services</a></li>
+                <li><a href="./contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </aside>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Contact Section -->
+        <section class="section banner-contact">
+            <div class="hero-container">
+                <div class="card card-contact">
+                    <h2 class="card-contact-title">Let's get in Touch</h2>
+                    <div class="alert form-message success hidden">
+                        <span class="check-icon"><i class="fa-solid fa-2xl fa-check"></i></span>
+                        <p>Thank you! Form submitted successfully.</p>
+                    </div>
+
+                    <div class="alert form-message error hidden">
+                        <span class="cross-icon"><i class="fa-solid fa-2xl fa-xmark"></i></span>
+                        <p>Oops! Form submission failed. Please try again.</p>
+                    </div>
+                    <form id="contact-form" action="./assets/php/contact-submit.php" class="form" method="post">
+                        <div class="row row-cols-md-2 row-cols-1 grid-spacer-2">
+                            <div class="col">
+                                <div class="form-input-wrapper">
+                                    <label for="first-name">First Name</label>
+                                    <input type="text" name="first-name" id="first-name" placeholder="Enter Your First Name">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-input-wrapper">
+                                    <label for="last-name">Last Name</label>
+                                    <input type="text" name="last-name" id="last-name" placeholder="Enter Your Last Name">
+                                    <p class="error-text hidden">This field is required</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-input-wrapper">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Enter Your Email">
+                                    <p class="error-text hidden">This field is required</p>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-input-wrapper">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" name="phone" id="phone" placeholder="Enter Your Telephone">
+                                    <p class="error-text hidden">This field is required</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-input-wrapper">
+                            <label for="message">Messages</label>
+                            <textarea name="message" id="message" rows="4" placeholder="Enter Your Message"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-nohover">Submit Button</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section class="section">
+            <div class="hero-container">
+                <div class="d-flex flex-column flex-lg-row gspace-5">
+                    <div class="col-lg-6">
+                        <div class="sub-heading-line animate-box animated animate__animated" data-animate="animate__fadeInDown">
+                            <h6 class="sub-heading-text">Contact Information</h6>
+                        </div>
+                        <h2 class="animate-box animated animate__animated" data-animate="animate__fadeInDown">Get In Touch</h2>
+                        <div class="contact-info-container animate-box animated animate__animated" data-animate="animate__fadeInUp">
+                            <div class="contact-info-item">
+                                <h6>Phone</h6>
+                                <p class="accent-color">+44(0)74 1555 5531</p>
+                            </div>
+                            <div class="contact-info-item">
+                                <h6>Email</h6>
+                                <p class="accent-color">Reception@ziadlondon.uk</p>
+                            </div>
+                            <div class="contact-info-item">
+                                <h6>Location</h6>
+                                <p class="accent-color">47 Beauchamp Place, London, SW3 1NX</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="sub-heading-line animate-box animated animate__animated" data-animate="animate__fadeInDown">
+                            <h6 class="sub-heading-text">Opening Hours</h6>
+                        </div>
+                        <h2 class="animate-box animated animate__animated" data-animate="animate__fadeInDown">Visit Us Today</h2>
+                        <div class="opening-hours-container animate-box animated animate__animated" data-animate="animate__fadeInUp">
+                            <div class="opening-hours-item">
+                                <h6>Monday - Sunday</h6>
+                                <p class="accent-color">10am - 10pm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="d-flex flex-column p-0">
+            <div class="footer-content-banner">
+                <div class="hero-container">
+                    <div class="footer-content-container">
+                        <div class="image-container">
+                            <img src="https://www.ziadlondon.uk/wp-content/uploads/2026/02/ChatGPT-Image-Feb-16-2026-12_24_01-PM.png" alt="Ziad London Logo">
+                        </div>
+                        <p class="footer-description">Ziad London Beauty Salon is dedicated to providing exceptional beauty treatments and unparalleled customer service. Visit us at 47 Beauchamp Place, London, SW3 1NX.</p>
+                        <div class="d-flex flex-row gspace-0 align-items-center justify-content-center flex-wrap">
+                            <a href="./index.html" class="footer-link">Home</a>
+                            <a href="./about.html" class="footer-link">About Us</a>
+                            <a href="./services.html" class="footer-link">Services</a>
+                            <a href="./contact.html" class="footer-link">Contact Us</a>
+                        </div>
+                        <div class="footer-divider"></div>
+                        <div class="footer-social-container">
+                            <a href="https://www.facebook.com/p/Ziad-London-100086305789862/" class="footer-icon" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="https://www.tiktok.com/@ziad_london" class="footer-icon" target="_blank">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                            <a href="https://www.instagram.com/ziad_london/" class="footer-icon" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-container">
+                <div class="footer-copyright-container">
+                    <span class="copyright-text">Copyright © 2025. All rights reserved</span>
+                    <div class="legalink-container">
+                        <a href="./contact.html" class="legallink-text">Terms & Conditions</a>
+                        <span class="divider-legalink">-</span>
+                        <a href="./contact.html" class="legallink-text">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Section -->
+    <script src="./assets/js/vendor/jquery.min.js"></script>
+    <script src="./assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/vendor/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/submit-form.js"></script>
+    <script src="./assets/js/video-script.js"></script>
+</body>
+</html>
